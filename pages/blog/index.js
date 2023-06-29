@@ -4,7 +4,7 @@ import styles from "@/styles/Home.module.scss";
 import { client } from "@/libs/client";
 import Link from "next/link";
 
-// SSG
+// SSGです
 export const getStaticProps = async () => {
   const data = await client.get({
     endpoint: "blog",
