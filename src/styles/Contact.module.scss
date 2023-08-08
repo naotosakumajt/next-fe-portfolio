@@ -1,0 +1,86 @@
+
+.formContainer {
+  font-family: "Arial", sans-serif;
+  background-color: #f7f7f7 !important;
+  text-align: center;
+  margin: 0;
+  padding: 40px 0;
+}
+
+.formInner {
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* フォーム要素のスタイリング */
+.title {
+  font-size: 34px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  text-align: center;
+  letter-spacing: 0.05em;
+  color: #333;
+}
+
+.label {
+  display: block;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.input {
+  width: 100%;
+  padding: 8px;
+  font-size: 14px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  box-sizing: border-box;
+}
+
+.textarea {
+  display: inline-block;
+  width: 100%;
+  height: 150px;
+  border: 1px solid #ced4da;
+  border-radius: 5px;
+  padding: 8px;
+}
+
+/* エラーメッセージ */
+.errorMessage {
+  color: #e3342f;
+  margin: 0 0 25px;
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* 送信ボタン */
+.btn {
+  width: 100%;
+  padding: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #3490dc;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px !important;
+}
+
+.btn:hover {
+  background-color: #2779bd;
+}
+
+.formItem {
+  margin-bottom: 20px;
+}

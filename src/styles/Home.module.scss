@@ -1,0 +1,161 @@
+/*--------------------------------
+common
+---------------------------------*/
+.post {
+  & > h1 {
+    font-size: 30px;
+    font-weight: bold;
+    margin: 40px 0 20px;
+    background-color: #eee;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  & > h2 {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 40px 0 16px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  & > p {
+    line-height: 1.8;
+    letter-spacing: 0.2px;
+  }
+
+  & > ol {
+    list-style-type: decimal;
+    list-style-position: inside;
+  }
+}
+
+.btn-more {
+  width: 300px;
+  text-align: center;
+  margin: 60px auto 0;
+}
+.btn-more a {
+  display: inline-block;
+  display: block;
+  background-color: #1b73e8;
+  color: #fff;
+  font-size: 18px;
+  border: none;
+  border-radius: 5px;
+  padding: 20px 80px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-more a:hover {
+  opacity: 0.7;
+}
+
+.btn-more a::after {
+  content: ">";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 20px;
+  margin-top: -1px;
+}
+
+.btn-more a:focus {
+  outline: none;
+}
+
+/*--------------------------------
+ MV
+---------------------------------*/
+.mv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 370px;
+}
+
+.mvBox {
+  padding: 0 40px;
+}
+
+.mvTitle {
+  font-size: 60px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin-bottom: 5px;
+  letter-spacing: 0.1em;
+}
+.mvSubtitle {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  margin-bottom: 40px;
+  letter-spacing: 0.08em;
+}
+
+.mvText {
+  font-size: 16px;
+  line-height: 1.8;
+  padding: 0 10px;
+}
+
+/*--------------------------------
+ profile
+---------------------------------*/
+.profile {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.profileImg {
+  width: 25%;
+  margin-right: 30px;
+  border-radius: 50%;
+}
+.profileImg img {
+  border-radius: 50%;
+}
+.profileBody {
+  flex: 1;
+}
+
+.profileBody p {
+  font-size: 15px;
+  line-height: 1.8;
+}
+
+.profileBody p:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+/*--------------------------------
+ Contact
+---------------------------------*/
+.contact {
+  text-align: center;
+}
+
+.contactItem:not(:last-child) {
+  margin-right: 10px;
+}
+
+.contactText {
+  margin-top: 10px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .btn-more {
+    width: 95%;
+    margin: 40px auto 0;
+  }
+}
