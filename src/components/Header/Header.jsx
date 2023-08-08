@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import { FaTimes, FaBars } from "react-icons/fa";
-import styles from "@/components/header/Header.module.scss";
+import styles from "@/components/Header/Header.module.scss";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
