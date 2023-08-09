@@ -107,10 +107,10 @@ export default function home({ latestWorks }) {
         <div className="box">
           <h2 className="title">CONTACT</h2>
           <p className={styles.lead}>
-            お問い合わせは、SNSかメールにてお願いいたします。
+            お問い合わせは、下記フォームからお願いいたします。
           </p>
           <div className={styles["btn-more"]}>
-            <Link href="/contact/">CONTACTへ</Link>
+            <Link href="/contact/">お問い合わせはこちら</Link>
           </div>
         </div>
       </section>
