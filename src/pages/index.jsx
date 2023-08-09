@@ -20,9 +20,9 @@ export default function home({ latestWorks }) {
           <p className={styles.mvTitle}>NAOTO SAKUMA</p>
           <p className={styles.mvSubtitle}>PORTFOLIO</p>
           <p className={styles.mvText}>
-            ユーザーとお客様が心から満足できるサイトをお作りいたします。
+            ユーザーとお客様が心から満足できるサイトを構築します。
             <br />
-            デザインとコーディングはおまかせください。
+            クリエイティブなビジョンを実現するフロントエンジニア。
           </p>
         </div>
       </div>
@@ -92,9 +92,6 @@ export default function home({ latestWorks }) {
             <div className={styles.profileBody}>
               <p>
                 テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。
-              </p>
-              <p>
-                テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。
               </p>
             </div>
           </div>

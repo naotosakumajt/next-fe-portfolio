@@ -1,12 +1,18 @@
 /*--------------------------------
   Layout
 ---------------------------------*/
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
 .layout {
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  margin: 70px auto 0;
+  margin: 63px auto 0;
   padding: 0px 0 0 0;
+  width: 100%;
 }
 .main {
   flex-basis: 100%;
@@ -16,7 +22,7 @@
 }
 
 .two-column {
-  max-width: 1350px;
+  max-width: 1280px;
   margin-bottom: 40px;
   padding-top: 40px;
   .main {
@@ -27,6 +33,7 @@
 
 @media screen and (max-width: 767px) {
   .two-column {
+    padding-top: 0;
     .main {
       flex-basis: 100%;
     }

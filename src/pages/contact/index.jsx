@@ -60,7 +60,7 @@ export default function ContactForm() {
                 <p className={styles.errorMessage}>{errors.name.message}</p>
               )}
             </div>
-            <div>
+            <div className={styles.formItem}>
               <label htmlFor="email" className={styles.label}>
                 メールアドレス：
               </label>
@@ -78,7 +78,7 @@ export default function ContactForm() {
                 <p className={styles.errorMessage}>{errors.email.message}</p>
               )}
             </div>
-            <div>
+            <div className={styles.formItem}>
               <label htmlFor="message" className={styles.label}>
                 お問い合わせ内容：
               </label>

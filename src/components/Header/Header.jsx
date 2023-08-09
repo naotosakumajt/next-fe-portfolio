@@ -4,7 +4,6 @@ import { FaTimes, FaBars } from "react-icons/fa";
 import styles from "@/components/Header/Header.module.scss";
 
 const Header = () => {
-  // 状態管理
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {

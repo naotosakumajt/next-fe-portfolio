@@ -19,18 +19,15 @@
   }
 }
 
-/* PC版のスタイル */
-@media screen and (min-width: 768px) {
-  .worksItem {
-    width: 33.33%;
-  }
+.worksItem {
+  width: 33.33%;
 }
 
-/* SP版のスタイル */
+/* SP表示 */
 @media screen and (max-width: 767px) {
   .worksItem {
     width: 100%;
-    padding: 10px;
+    padding: 10px 10px 20px;
   }
 }
 
@@ -120,12 +117,9 @@
   img {
     width: 100%;
     height: auto;
-    border-radius: 5px;
   }
   .worksCategory {
     font-size: 0.7rem;
-    top: 15px;
-    left: 15px;
   }
   .worksName {
     font-size: 1.8rem;
@@ -197,6 +191,15 @@
     .hljs-selector-tag,
     .hljs-tag {
       color: #81a2be;
+    }
+  }
+}
+
+/* SP表示 */
+@media screen and (max-width: 767px) {
+  .article {
+    .inner {
+      margin: 0 20px;
     }
   }
 }
