@@ -17,7 +17,6 @@
   text-align: left;
 }
 
-/* フォーム要素のスタイリング */
 .title {
   font-size: 34px;
   font-weight: bold;
@@ -73,10 +72,9 @@
   border-radius: 4px;
   cursor: pointer;
   transition: background-color 0.3s;
-}
-
-.btn:hover {
-  background-color: #2779bd;
+  &:hover {
+    background-color: #2779bd;
+  }
 }
 
 .formItem {

@@ -20,16 +20,20 @@ export default function home({ latestWorks }) {
           <p className={styles.mvTitle}>NAOTO SAKUMA</p>
           <p className={styles.mvSubtitle}>PORTFOLIO</p>
           <p className={styles.mvText}>
-            ユーザーとお客様が心から満足できるサイトを構築します。
+            ユーザーとお客様が心から
+            <br className="util-sp-indention" />
+            満足できるサイトを構築します。
             <br />
-            クリエイティブなビジョンを実現するフロントエンジニア。
+            クリエイティブなビジョンを実現する
+            <br className="util-sp-indention" />
+            フロントエンジニア。
           </p>
         </div>
       </div>
       {/* /MV */}
 
       {/* works */}
-      <section className={`${styles.works} section`}>
+      <section className="section">
         <div className="box">
           <h2 className="title">WORKS</h2>
           {/* 最新3件を表示 */}
@@ -77,7 +81,7 @@ export default function home({ latestWorks }) {
       {/* /works */}
 
       {/* profile */}
-      <section className={`${styles.profile} section`}>
+      <section className="section">
         <div className="box">
           <h2 className="title">PROFILE</h2>
           <div className={styles.profile}>
@@ -107,7 +111,9 @@ export default function home({ latestWorks }) {
         <div className="box">
           <h2 className="title">CONTACT</h2>
           <p className={styles.lead}>
-            お問い合わせは、下記フォームからお願いいたします。
+            お問い合わせは、
+            <br className="util-sp-indention" />
+            下記フォームからお願いいたします。
           </p>
           <div className={styles["btn-more"]}>
             <Link href="/contact/">お問い合わせはこちら</Link>

@@ -31,7 +31,7 @@ export default function MonthlyArchive({ works, category, tag }) {
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">
-            月別アーカイブ: {parsedDate.format("YYYY年M月")}
+            {parsedDate.format("YYYY年M月")}
           </h2>
           <ul className={styles.worksList}>
             {filteredWorks.map((work) => (

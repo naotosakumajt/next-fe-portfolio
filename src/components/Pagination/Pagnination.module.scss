@@ -5,37 +5,33 @@ pagination
   display: flex;
   justify-content: center;
   margin-top: 20px;
-}
-
-.pagination ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.pagination li {
-  display: inline-block;
-  margin-right: 10px;
-}
-
-.pagination a {
-  text-decoration: none;
-  color: #333;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-}
-
-.pagination a:hover {
-  background-color: #f2f2f2;
-}
-
-.pagination span {
-  display: inline-block;
-  padding: 5px 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  color: #aaa;
+  & > ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    li {
+      display: inline-block;
+      margin-right: 10px;
+      font-size: 1rem;
+    }
+  }
+  a {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    &:hover {
+      opacity: 0.5;
+    }
+  }
+  span {
+    display: inline-block;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    color: #aaa;
+  }
 }
 
 .pagination .active a {
