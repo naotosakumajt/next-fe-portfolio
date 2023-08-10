@@ -1,0 +1,94 @@
+/*--------------------------------
+PROFILE
+---------------------------------*/
+.profile,
+.txtBox {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  max-width: 850px;
+  margin: 0 auto;
+}
+
+.innerBox {
+  background-color: #fff;
+  padding: 20px;
+  max-width: 870px;
+  margin: 0 auto;
+}
+
+.profileImg {
+  width: 25%;
+  margin-right: 30px;
+  border-radius: 50%;
+  & > img {
+    border-radius: 50%;
+  }
+}
+
+.profileBody {
+  flex: 1;
+  & > p {
+    font-size: 15px;
+    line-height: 1.8;
+  }
+  h3 {
+    font-size: 1.6rem;
+    margin-bottom: 20px;
+    font-weight: bold;
+  }
+}
+
+.profileBody p:not(:last-child) {
+  margin-bottom: 30px;
+}
+
+.profileDetail {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  & > dt {
+    font-weight: bold;
+    width: 20%;
+  }
+  & > dd {
+    width: 80%;
+  }
+}
+
+.txtBox {
+  display: flex;
+  justify-content: flex-start;
+  padding: 40px 20px 20px;
+  line-height: 1.8;
+}
+
+// スマホ表示
+@media screen and (max-width: 767px) {
+  .profileImg {
+    margin-right: 0;
+    width: 50%;
+  }
+  .profileBody {
+    flex-basis: 100%;
+    h3 {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+    .profileDetail {
+      flex-direction: column;
+      align-items: flex-start;
+      margin-bottom: 15px;
+      dt {
+        width: 100%;
+      }
+      dd {
+        width: 100%;
+      }
+    }
+  }
+  .txtBox {
+    padding: 20px 0;
+  }
+}

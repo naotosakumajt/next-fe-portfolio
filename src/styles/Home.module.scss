@@ -100,47 +100,6 @@ TOPページ
   padding: 0 10px;
 }
 
-// profile
-.profile {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.profileImg {
-  width: 25%;
-  margin-right: 30px;
-  border-radius: 50%;
-  & > img {
-    border-radius: 50%;
-  }
-}
-
-.profileBody {
-  flex: 1;
-  & > p {
-    font-size: 15px;
-    line-height: 1.8;
-  }
-}
-
-.profileBody p:not(:last-child) {
-  margin-bottom: 30px;
-}
-
-@media screen and (max-width: 767px) {
-  .profileImg {
-    margin-right: 0;
-    width: 50%;
-  }
-  .profileBody {
-    flex-basis: 100%;
-  }
-}
-
 // Contact
 .contact {
   text-align: center;
@@ -159,6 +118,7 @@ TOPページ
 }
 
 @media screen and (max-width: 767px) {
+  
   .btn-more {
     width: 95%;
     margin: 40px auto 0;

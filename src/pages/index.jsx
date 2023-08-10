@@ -4,6 +4,7 @@ import Link from "next/link";
 import { getWorksData } from "@/utils/getWorksData";
 import Layout from "@/components/Layout/Layout";
 import styles from "@/styles/Home.module.scss";
+import Profile from "@/styles/Profile.module.scss";
 import worksList from "@/components/WorksList/WorksList.module.scss";
 
 import dayjs from "dayjs";
@@ -86,8 +87,8 @@ export default function home({ latestWorks }) {
       <section className="section">
         <div className="box">
           <h2 className="title">PROFILE</h2>
-          <div className={styles.profile}>
-            <p className={styles.profileImg}>
+          <div className={Profile.profile}>
+            <p className={Profile.profileImg}>
               <Image
                 src="/images/profile.png"
                 alt=""
@@ -95,7 +96,7 @@ export default function home({ latestWorks }) {
                 height={400}
               />
             </p>
-            <div className={styles.profileBody}>
+            <div className={Profile.profileBody}>
               <p>
                 テキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入りますテキストが入ります。
               </p>
