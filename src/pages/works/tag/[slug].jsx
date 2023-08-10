@@ -1,3 +1,4 @@
+import CustomHead from "@/components/Head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
@@ -34,6 +35,7 @@ export default function TagWorksPage({
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
+      <CustomHead title="WORKS TAG" />
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">タグ: {getTagName(slug)}</h2>

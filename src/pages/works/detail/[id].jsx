@@ -1,3 +1,4 @@
+import CustomHead from "@/components/Head";
 import { client } from "libs/client";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
 import Image from "next/image";
@@ -14,6 +15,7 @@ export default function worksId({ works, category, tag, specificWork }) {
   const work = specificWork;
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
+      <CustomHead title="WORKS DETAIL" />
       <section className={`${styles.worksDetail} section`}>
         <article className={styles.article}>
           <div className={styles.inner}>

@@ -1,3 +1,4 @@
+import CustomHead from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/WorksList/WorksList.module.scss";
@@ -24,6 +25,7 @@ export default function WorksPage({
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
+      <CustomHead title="WORKS TOP" />
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">WORKS</h2>

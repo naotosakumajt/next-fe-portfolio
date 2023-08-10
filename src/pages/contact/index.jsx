@@ -1,3 +1,4 @@
+import CustomHead from "@/components/Head";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -44,6 +45,7 @@ export default function ContactForm() {
 
   return (
     <Layout>
+      <CustomHead title="CONTACT" />
       <div className={styles.formContainer}>
         <h2 className={styles.title}>CONTACT</h2>
         <div className={styles.formInner}>

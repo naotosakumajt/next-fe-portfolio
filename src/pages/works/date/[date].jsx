@@ -1,3 +1,4 @@
+import CustomHead from "@/components/Head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
@@ -28,11 +29,10 @@ export default function MonthlyArchive({ works, category, tag }) {
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
+      <CustomHead title="WORKS ARCHIVE" />
       <section className={`${styles.works} section`}>
         <div className="box">
-          <h2 className="title">
-            {parsedDate.format("YYYY年M月")}
-          </h2>
+          <h2 className="title">{parsedDate.format("YYYY年M月")}</h2>
           <ul className={styles.worksList}>
             {filteredWorks.map((work) => (
               <li className={styles.worksItem} key={work.id}>

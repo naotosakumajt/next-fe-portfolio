@@ -1,3 +1,4 @@
+import CustomHead from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
 import { getWorksData } from "@/utils/getWorksData";
@@ -14,6 +15,7 @@ dayjs.extend(timezone);
 export default function home({ latestWorks }) {
   return (
     <Layout showSidebar={false}>
+      <CustomHead title="TOP" />
       {/* MV */}
       <div className={styles.mv}>
         <div className={styles.mvbox}>

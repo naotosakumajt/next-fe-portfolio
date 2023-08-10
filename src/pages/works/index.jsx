@@ -1,4 +1,4 @@
-// pages/works/index.jsx
+import CustomHead from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
 import Layout from "@/components/Layout/Layout";
@@ -18,6 +18,7 @@ export default function Works({ works, category, tag, totalCount }) {
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
+      <CustomHead title="WORKS TOP" />
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">WORKS</h2>
