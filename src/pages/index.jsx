@@ -20,7 +20,7 @@ export default function home({ latestWorks }) {
       <div className={styles.mv}>
         <div className={styles.mvbox}>
           <p className={styles.mvTitle}>NAOTO SAKUMA</p>
-          <p className={styles.mvSubtitle}>PORTFOLIO</p>
+          <p className={styles.mvSubtitle}>Portfolio</p>
           <p className={styles.mvText}>
             ユーザーとお客様が心から
             <br className="util-sp-indention" />
