@@ -117,8 +117,11 @@ TOPページ
   text-align: center;
 }
 
+// スマホ表示
 @media screen and (max-width: 767px) {
-  
+  .mvText {
+    padding-bottom: 30px;
+  }
   .btn-more {
     width: 95%;
     margin: 40px auto 0;
