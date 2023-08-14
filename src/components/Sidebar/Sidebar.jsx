@@ -59,7 +59,7 @@ export const Sidenavi = ({ posts, category, tag, uniqueDates }) => {
           {Object.keys(postsByMonth).map((date) => (
             <li key={date}>
               <Link
-                href={`/works/date/${encodeURIComponent(
+                href={`/works/archive/${encodeURIComponent(
                   formatDateToYYYY_MM(date)
                 )}`}
                 passHref
