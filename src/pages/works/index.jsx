@@ -1,6 +1,8 @@
 import CustomHead from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
+import { FaChevronDown } from "react-icons/fa";
 import Layout from "@/components/Layout/Layout";
 import styles from "@/components/WorksList/WorksList.module.scss";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
@@ -13,8 +15,15 @@ dayjs.extend(timezone);
 
 import Pagination from "@/components/Pagination/Pagination";
 
-export default function Works({ works, category, tag, totalCount }) {
+export default function Works({
+  works,
+  category,
+  tag,
+  totalCount,
+  uniqueDates,
+}) {
   const totalPages = Math.ceil(totalCount / works.length);
+  const router = useRouter();
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
@@ -22,6 +31,35 @@ export default function Works({ works, category, tag, totalCount }) {
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">WORKS</h2>
+          <div className={styles.selectWrapper}>
+            <select
+              name=""
+              id="monthly-archive"
+              onChange={(e) => {
+                const selectedDate = e.target.value;
+                if (selectedDate) {
+                  const year = selectedDate.split("年")[0];
+                  const month = selectedDate
+                    .split("年")[1]
+                    .replace("月", "")
+                    .padStart(2, "0");
+                  const formattedDate = `${year}_${month}`;
+                  router.push(`/works/archive/${formattedDate}`);
+                }
+              }}
+            >
+              <option value="">年月から絞り込む</option>
+              {uniqueDates.map((date) => (
+                <option key={date} value={date}>
+                  {date}
+                </option>
+              ))}
+            </select>
+            <div className={styles.selectIcon}>
+              <FaChevronDown />
+            </div>
+          </div>
+
           <ul className={styles.worksList}>
             {works.map((work) => (
               <li className={styles.worksItem} key={work.id}>

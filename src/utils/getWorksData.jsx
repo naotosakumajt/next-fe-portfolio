@@ -56,47 +56,30 @@ export async function getWorksData(
   };
 }
 
-export async function getUniqueDates(date) {
-  const works = await (async () => {
-    const allWorksData = [];
-    let page = 1;
+export async function getUniqueDates() {
+  const allWorksData = [];
+  let page = 1;
 
-    while (true) {
-      const { works } = await getWorksData(page);
-      if (works.length === 0) {
-        break;
-      }
-      allWorksData.push(...works);
-      page++;
+  while (true) {
+    const { works } = await getWorksData(page);
+    if (works.length === 0) {
+      break;
     }
-
-    return allWorksData;
-  })();
-
-  let uniqueDates = {};
-
-  if (works && works.length > 0) {
-    const filteredWorks = works.filter((work) => {
-      const yearMonth = dayjs
-        .utc(work.publishedAt)
-        .tz("Asia/Tokyo")
-        .format("YYYY年M月");
-      return yearMonth === date;
-    });
-
-    const allDates = [
-      ...new Set(filteredWorks.map((work) => work.publishedAt)),
-    ];
-    const groupedDates = allDates.reduce((groups, date) => {
-      const yearMonth = dayjs.utc(date).tz("Asia/Tokyo").format("YYYY年M月");
-      if (!groups[yearMonth]) {
-        groups[yearMonth] = [];
-      }
-      groups[yearMonth].push(date);
-      return groups;
-    }, {});
-    uniqueDates = groupedDates;
+    allWorksData.push(...works);
+    page++;
   }
+
+  const uniqueDates = [];
+
+  if (allWorksData && allWorksData.length > 0) {
+    const allDates = allWorksData.map((work) =>
+      dayjs.utc(work.publishedAt).tz("Asia/Tokyo").format("YYYY年M月")
+    );
+    const groupedDates = [...new Set(allDates)];
+    uniqueDates.push(...groupedDates);
+  }
+
+  //console.log("uniqueDates:", uniqueDates);
 
   return uniqueDates;
 }

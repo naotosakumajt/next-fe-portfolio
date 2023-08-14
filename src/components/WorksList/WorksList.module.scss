@@ -4,7 +4,7 @@
 .works {
   font-size: 20px;
   padding-top: 40px;
-  & > .title {
+  h2 {
     margin-bottom: 20px;
   }
 }
@@ -107,6 +107,40 @@
   font-size: 1rem;
 }
 
+.selectWrapper {
+  position: relative;
+  max-width: 200px;
+  margin: 0 20px 10px auto;
+}
+
+.selectWrapper select {
+  width: 100%;
+  padding: 8px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f7f7f7;
+  appearance: none;
+  cursor: pointer;
+  transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
+}
+
+.selectWrapper select:hover,
+.selectWrapper select:focus {
+  border-color: #aaa;
+  background-color: #fff;
+  outline: none;
+}
+
+.selectIcon {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  pointer-events: none;
+  margin-top: 2px;
+}
+
 /*--------------------------------
  詳細ページ
 ---------------------------------*/
@@ -184,5 +218,9 @@
     .inner {
       margin: 0 20px;
     }
+  }
+  .selectWrapper {
+    max-width: 95%;
+    margin: 30px auto 20px auto;
   }
 }
