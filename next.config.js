@@ -6,4 +6,10 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = {
+  ...nextConfig,
+  env: {
+    API_KEY: process.env.API_KEY,
+    SLACK_WEBHOOK_URL: process.env.SLACK_WEBHOOK_URL,
+  },
+};
