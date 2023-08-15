@@ -38,7 +38,7 @@ export default function CategoryWorksPage({
       <CustomHead title="WORKS CATEGORY" />
       <section className={`${styles.works} section`}>
         <div className="box">
-          <h2 className="title">カテゴリー: {getCategoryName(slug)}</h2>
+          <h2 className="title">{getCategoryName(slug)}</h2>
           <ul className={styles.worksList}>
             {works.map((work) => (
               <li className={styles.worksItem} key={work.id}>

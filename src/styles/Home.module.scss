@@ -79,7 +79,7 @@ TOPページ
 }
 
 .mvTitle {
-  font-size: 60px;
+  font-size: 3.6rem;
   font-family: Futura, sans-serif;
   line-height: 1.2;
   margin-bottom: 10px;
@@ -87,7 +87,7 @@ TOPページ
 }
 
 .mvSubtitle {
-  font-size: 26px;
+  font-size: 1.6rem;
   font-weight: bold;
   line-height: 1;
   margin-bottom: 40px;
@@ -95,7 +95,7 @@ TOPページ
 }
 
 .mvText {
-  font-size: 16px;
+  font-size: 1.1rem;
   line-height: 1.8;
   padding: 0 10px;
 }
@@ -119,8 +119,9 @@ TOPページ
 
 // スマホ表示
 @media screen and (max-width: 767px) {
-  .mvText {
-    padding-bottom: 30px;
+  .mv {
+    min-height: 400px;
+    padding-bottom: 20px;
   }
   .btn-more {
     width: 95%;

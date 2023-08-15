@@ -38,7 +38,7 @@ export default function TagWorksPage({
       <CustomHead title="WORKS TAG" />
       <section className={`${styles.works} section`}>
         <div className="box">
-          <h2 className="title">タグ: {getTagName(slug)}</h2>
+          <h2 className="title">{getTagName(slug)}</h2>
           <ul className={styles.worksList}>
             {works.map((work) => (
               <li className={styles.worksItem} key={work.id}>
