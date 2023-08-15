@@ -1,4 +1,3 @@
-// components/Pagination/Pagination.jsx
 import Link from "next/link";
 import styles from "@/components/Pagination/Pagnination.module.scss";
 
@@ -8,7 +7,14 @@ const Pagination = ({ currentPage, totalPages }) => {
   return (
     <nav className={styles.pagination}>
       <ul>
-        {currentPage !== 1 && ( // currentPageが1でない場合のみ1へのリンクを表示
+        {currentPage !== 1 && (
+          <li key={`pre-${currentPage}`}>
+            <Link href={`/works/${currentPage - 1}`} passHref legacyBehavior>
+              <a className={styles.pageLink}>Prev</a>
+            </Link>
+          </li>
+        )}
+        {currentPage !== 1 && (
           <li key={1}>
             <Link href="/works" passHref legacyBehavior>
               <a className={styles.pageLink}>1</a>
@@ -16,9 +22,12 @@ const Pagination = ({ currentPage, totalPages }) => {
           </li>
         )}
         {pages.map((page) => {
-          if (page === 1) return null; // ページ番号が1の場合は表示しない
+          if (page === 1) return null;
           return (
-            <li key={page} className={currentPage === page ? styles.active : ""}>
+            <li
+              key={page}
+              className={currentPage === page ? styles.active : ""}
+            >
               {currentPage === page ? (
                 <span className={styles.currentPage}>{page}</span>
               ) : (
@@ -29,6 +38,13 @@ const Pagination = ({ currentPage, totalPages }) => {
             </li>
           );
         })}
+        {currentPage !== totalPages && (
+          <li key={`next-${currentPage}`}>
+            <Link href={`/works/${currentPage + 1}`} passHref legacyBehavior>
+              <a className={styles.pageLink}>Next</a>
+            </Link>
+          </li>
+        )}
       </ul>
     </nav>
   );
