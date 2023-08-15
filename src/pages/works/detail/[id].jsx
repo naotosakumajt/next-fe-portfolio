@@ -2,6 +2,7 @@ import { CustomHead } from "@/components/Head";
 import { client } from "libs/client";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
 import Image from "next/image";
+import Link from "next/link";
 import { Layout } from "@/components/Layout/Layout";
 import styles from "@/components/WorksList/WorksList.module.scss";
 
@@ -52,6 +53,9 @@ export default function worksId({ works, category, tag, specificWork }) {
             />
           </div>
         </article>
+        <div className="btn-more">
+          <Link href="/works/">WORKS一覧へ</Link>
+        </div>
       </section>
     </Layout>
   );

@@ -76,7 +76,7 @@ export default function home({ latestWorks }) {
               </li>
             ))}
           </ul>
-          <div className={styles["btn-more"]}>
+          <div className="btn-more">
             <Link href="/works/">WORKS一覧へ</Link>
           </div>
         </div>
@@ -102,7 +102,7 @@ export default function home({ latestWorks }) {
               </p>
             </div>
           </div>
-          <div className={styles["btn-more"]}>
+          <div className="btn-more">
             <Link href="/profile/">PROFILE詳細へ</Link>
           </div>
         </div>
@@ -118,7 +118,7 @@ export default function home({ latestWorks }) {
             <br className="util-sp-indention" />
             下記フォームからお願いいたします。
           </p>
-          <div className={styles["btn-more"]}>
+          <div className="btn-more">
             <Link href="/contact/">お問い合わせはこちら</Link>
           </div>
         </div>

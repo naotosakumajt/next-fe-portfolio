@@ -119,6 +119,42 @@ h5 {
   display: none;
 }
 
+.btn-more {
+  width: 300px;
+  text-align: center;
+  margin: 60px auto 0;
+  & > a {
+    display: inline-block;
+    display: block;
+    background-color: #1b73e8;
+    color: #fff;
+    font-size: 18px;
+    border: none;
+    line-height: 1;
+    border-radius: 5px;
+    padding: 20px 40px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative;
+    overflow: hidden;
+    &:hover {
+      opacity: 0.7;
+    }
+    &:focus {
+      outline: none;
+    }
+    &::after {
+      content: ">";
+      position: absolute;
+      top: 50%;
+      right: 20px;
+      transform: translateY(-50%);
+      font-size: 20px;
+      margin-top: -1px;
+    }
+  }
+}
+
 /* スマホ表示 */
 @media screen and (max-width: 767px) {
   .box {
@@ -132,5 +168,9 @@ h5 {
   }
   .util-sp-indention {
     display: block;
+  }
+  .btn-more {
+    width: 95%;
+    margin: 40px auto 0;
   }
 }

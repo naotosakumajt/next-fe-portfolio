@@ -79,6 +79,9 @@ export default function TagWorksPage({
         {totalPages > 1 && (
           <Pagination currentPage={1} totalPages={totalPages} />
         )}
+        <div className="btn-more">
+          <Link href="/works/">WORKS一覧へ</Link>
+        </div>
       </section>
     </Layout>
   );

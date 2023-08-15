@@ -70,6 +70,9 @@ export default function MonthlyArchive({ works, category, tag }) {
             ))}
           </ul>
         </div>
+        <div className="btn-more">
+          <Link href="/works/">WORKS一覧へ</Link>
+        </div>
       </section>
     </Layout>
   );
