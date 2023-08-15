@@ -1,9 +1,9 @@
-import CustomHead from "@/components/Head";
+import { CustomHead } from "@/components/Head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/WorksList/WorksList.module.scss";
-import Layout from "@/components/Layout/Layout";
+import { Layout } from "@/components/Layout/Layout";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
 
 import dayjs from "dayjs";
@@ -12,7 +12,7 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-import Pagination from "@/components/Pagination/Pagination";
+import { Pagination } from "@/components/Pagination/Pagination";
 
 export default function CategoryWorksPage({
   works,

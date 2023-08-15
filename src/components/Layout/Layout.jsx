@@ -1,11 +1,9 @@
-// components/Layout/Layout.jsx（レイアウトコンポーネント用）
-import Header from "@/components/Header/Header";
-import Footer from "@/components/Footer/Footer";
+import { Header } from "@/components/Header/Header";
+import { Footer } from "@/components/Footer/Footer";
+import { Sidenavi } from "@/components/Sidebar/Sidebar";
 import styles from "@/components/Layout/Layout.module.scss";
-import Sidenavi from "@/components/Sidebar/Sidebar";
 
-const Layout = ({ children, showSidebar, category, tag, works }) => {
-  //
+export const Layout = ({ children, showSidebar, category, tag, works }) => {
   return (
     <div className={`${styles.container}`}>
       <Header />
@@ -23,5 +21,3 @@ const Layout = ({ children, showSidebar, category, tag, works }) => {
     </div>
   );
 };
-
-export default Layout;

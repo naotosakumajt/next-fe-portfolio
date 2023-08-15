@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styles from "@/components/Pagination/Pagnination.module.scss";
 
-const Pagination = ({ currentPage, totalPages }) => {
+export const Pagination = ({ currentPage, totalPages }) => {
   const pages = [...Array(totalPages).keys()].map((page) => page + 1);
 
   return (
@@ -49,5 +49,3 @@ const Pagination = ({ currentPage, totalPages }) => {
     </nav>
   );
 };
-
-export default Pagination;

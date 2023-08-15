@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FaTimes, FaBars } from "react-icons/fa";
 import styles from "@/components/Header/Header.module.scss";
 
-const Header = () => {
+export const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => {
@@ -47,5 +47,3 @@ const Header = () => {
     </header>
   );
 };
-
-export default Header;

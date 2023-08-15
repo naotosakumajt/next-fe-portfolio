@@ -1,8 +1,8 @@
-import CustomHead from "@/components/Head";
+import { CustomHead } from "@/components/Head";
 import { useForm } from "react-hook-form";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import Layout from "@/components/Layout/Layout";
+import { Layout } from "@/components/Layout/Layout";
 import styles from "@/styles/Contact.module.scss";
 
 export default function ContactForm() {

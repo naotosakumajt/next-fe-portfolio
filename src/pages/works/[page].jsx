@@ -1,19 +1,18 @@
-import CustomHead from "@/components/Head";
+import { CustomHead } from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { FaChevronDown } from "react-icons/fa";
-import styles from "@/components/WorksList/WorksList.module.scss";
-import Layout from "@/components/Layout/Layout";
+import { Layout } from "@/components/Layout/Layout";
+import { Pagination } from "@/components/Pagination/Pagination";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
+import styles from "@/components/WorksList/WorksList.module.scss";
 
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
-
-import Pagination from "@/components/Pagination/Pagination";
 
 export default function WorksPage({
   works,

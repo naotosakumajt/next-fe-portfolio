@@ -1,8 +1,8 @@
-import CustomHead from "@/components/Head";
+import { CustomHead } from "@/components/Head";
 import Image from "next/image";
 import Link from "next/link";
 import { getWorksData } from "@/utils/getWorksData";
-import Layout from "@/components/Layout/Layout";
+import { Layout } from "@/components/Layout/Layout";
 import styles from "@/styles/Home.module.scss";
 import Profile from "@/styles/Profile.module.scss";
 import worksList from "@/components/WorksList/WorksList.module.scss";

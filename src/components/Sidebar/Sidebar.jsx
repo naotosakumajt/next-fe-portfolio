@@ -1,12 +1,10 @@
-// components/Sidebar/Sidebar.jsx（サイドバーコンポーネント用）
 import Link from "next/link";
 import styles from "@/components/Sidebar/Sidebar.module.scss";
 
-export const Sidenavi = ({ posts, category, tag }) => {
-
+export const Sidenavi = ({ category, tag }) => {
   return (
     <aside className={styles.aside}>
-      {/* カテゴリー */}
+      {/* カテゴリーリスト */}
       <div className={styles.sideBox}>
         <h2 className={styles.pageTitle}>カテゴリー</h2>
         <ul className={styles.listCate}>
@@ -20,7 +18,7 @@ export const Sidenavi = ({ posts, category, tag }) => {
         </ul>
       </div>
 
-      {/* タグ */}
+      {/* タグリスト */}
       <div className={styles.sideBox}>
         <h2 className={styles.pageTitle}>タグ</h2>
         <ul className={styles.listTag}>
@@ -33,9 +31,6 @@ export const Sidenavi = ({ posts, category, tag }) => {
           ))}
         </ul>
       </div>
-
     </aside>
   );
 };
-
-export default Sidenavi;

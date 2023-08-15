@@ -1,8 +1,8 @@
-import CustomHead from "@/components/Head";
+import { CustomHead } from "@/components/Head";
 import { client } from "libs/client";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
 import Image from "next/image";
-import Layout from "@/components/Layout/Layout";
+import { Layout } from "@/components/Layout/Layout";
 import styles from "@/components/WorksList/WorksList.module.scss";
 
 import dayjs from "dayjs";

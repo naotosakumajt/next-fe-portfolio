@@ -1,9 +1,9 @@
-import CustomHead from "@/components/Head";
+import { CustomHead } from "@/components/Head";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
 import styles from "@/components/WorksList/WorksList.module.scss";
-import Layout from "@/components/Layout/Layout";
+import { Layout } from "@/components/Layout/Layout";
 import { getWorksData } from "@/utils/getWorksData";
 
 import dayjs from "dayjs";

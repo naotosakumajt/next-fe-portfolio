@@ -1,6 +1,6 @@
 import Head from "next/head";
 
-const CustomHead = ({ title }) => {
+export const CustomHead = ({ title }) => {
   return (
     <Head>
       <meta charset="UTF-8" />
@@ -10,5 +10,3 @@ const CustomHead = ({ title }) => {
     </Head>
   );
 };
-
-export default CustomHead;
