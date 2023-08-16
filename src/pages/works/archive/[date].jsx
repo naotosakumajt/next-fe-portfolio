@@ -1,7 +1,9 @@
-import { CustomHead } from "@/components/Head";
-import { useRouter } from "next/router";
 import Image from "next/image";
 import Link from "next/link";
+import { CustomHead } from "@/components/Head";
+import { useRouter } from "next/router";
+import { WorkItem } from "@/components/WorksList/WorkItem";
+import { LinkButton } from "@/components/LinkButton";
 import styles from "@/components/WorksList/WorksList.module.scss";
 import { Layout } from "@/components/Layout/Layout";
 import { getWorksData } from "@/utils/getWorksData";
@@ -17,7 +19,6 @@ export default function MonthlyArchive({ works, category, tag }) {
   const { date } = router.query;
   const formattedDate = date.replace("_", "-");
   const parsedDate = dayjs(`${formattedDate}-01`, "YYYY-MM").tz("Asia/Tokyo");
-  console.log("Parsed Date:", parsedDate.format("YYYY年M月"));
 
   // 指定した年月のみの投稿をフィルタリング
   const filteredWorks = works.filter((work) => {
@@ -35,45 +36,11 @@ export default function MonthlyArchive({ works, category, tag }) {
           <h2 className="title">{parsedDate.format("YYYY年M月")}</h2>
           <ul className={styles.worksList}>
             {filteredWorks.map((work) => (
-              <li className={styles.worksItem} key={work.id}>
-                <Link href={`/works/detail/${work.id}`} passHref legacyBehavior>
-                  <a>
-                    <div className={styles.worksImg}>
-                      <Image
-                        src={work.thumbnail.url}
-                        alt={work.title}
-                        width={400}
-                        height={300}
-                      />
-                      {work.category && (
-                        <span className={styles.worksCategory}>
-                          {work.category.name}
-                        </span>
-                      )}
-                    </div>
-                    <div className={styles.worksInner}>
-                      <h3 className={styles.worksName}>{work.title}</h3>
-                      <p className={styles.publishedAt}>
-                        {dayjs
-                          .utc(work.publishedAt)
-                          .tz("Asia/Tokyo")
-                          .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
-                      </p>
-                      <p className={styles.worksTag}>
-                        {work.tag.map((tag) => (
-                          <span key={tag.id}>{tag.tag || ""}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </a>
-                </Link>
-              </li>
+              <WorkItem key={work.id} work={work} />
             ))}
           </ul>
         </div>
-        <div className="btn-more">
-          <Link href="/works/">WORKS一覧へ</Link>
-        </div>
+        <LinkButton href="/works/" text="WORKS一覧へ" />
       </section>
     </Layout>
   );

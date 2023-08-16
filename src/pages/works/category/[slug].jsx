@@ -1,17 +1,10 @@
 import { CustomHead } from "@/components/Head";
+import { WorkItem } from "@/components/WorksList/WorkItem";
+import { LinkButton } from "@/components/LinkButton";
 import { useRouter } from "next/router";
-import Image from "next/image";
-import Link from "next/link";
 import styles from "@/components/WorksList/WorksList.module.scss";
 import { Layout } from "@/components/Layout/Layout";
 import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
-
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-dayjs.extend(utc);
-dayjs.extend(timezone);
-
 import { Pagination } from "@/components/Pagination/Pagination";
 
 export default function CategoryWorksPage({
@@ -19,7 +12,6 @@ export default function CategoryWorksPage({
   category,
   tag,
   totalCount,
-  uniqueDates,
 }) {
   const router = useRouter();
   const { slug } = router.query;
@@ -41,48 +33,14 @@ export default function CategoryWorksPage({
           <h2 className="title">{getCategoryName(slug)}</h2>
           <ul className={styles.worksList}>
             {works.map((work) => (
-              <li className={styles.worksItem} key={work.id}>
-                <Link href={`/works/detail/${work.id}`} passHref legacyBehavior>
-                  <a>
-                    <div className={styles.worksImg}>
-                      <Image
-                        src={work.thumbnail.url}
-                        alt={work.title}
-                        width={400}
-                        height={300}
-                      />
-                      {work.category && (
-                        <span className={styles.worksCategory}>
-                          {work.category.name}
-                        </span>
-                      )}
-                    </div>
-                    <div className={styles.worksInner}>
-                      <h3 className={styles.worksName}>{work.title}</h3>
-                      <p className={styles.publishedAt}>
-                        {dayjs
-                          .utc(work.publishedAt)
-                          .tz("Asia/Tokyo")
-                          .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
-                      </p>
-                      <p className={styles.worksTag}>
-                        {work.tag.map((tag) => (
-                          <span key={tag.id}>{tag.tag || ""}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </a>
-                </Link>
-              </li>
+              <WorkItem key={work.id} work={work} />
             ))}
           </ul>
         </div>
         {totalPages > 1 && (
           <Pagination currentPage={1} totalPages={totalPages} />
         )}
-        <div className="btn-more">
-          <Link href="/works/">WORKS一覧へ</Link>
-        </div>
+        <LinkButton href="/works/" text="WORKS一覧へ" />
       </section>
     </Layout>
   );

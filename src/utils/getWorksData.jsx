@@ -78,8 +78,5 @@ export async function getUniqueDates() {
     const groupedDates = [...new Set(allDates)];
     uniqueDates.push(...groupedDates);
   }
-
-  //console.log("uniqueDates:", uniqueDates);
-
   return uniqueDates;
 }

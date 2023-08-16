@@ -1,17 +1,12 @@
-import { CustomHead } from "@/components/Head";
 import Image from "next/image";
-import Link from "next/link";
+import { CustomHead } from "@/components/Head";
+import { WorkItem } from "@/components/WorksList/WorkItem";
+import { LinkButton } from "@/components/LinkButton";
 import { getWorksData } from "@/utils/getWorksData";
 import { Layout } from "@/components/Layout/Layout";
 import styles from "@/styles/Home.module.scss";
 import Profile from "@/styles/Profile.module.scss";
 import worksList from "@/components/WorksList/WorksList.module.scss";
-
-import dayjs from "dayjs";
-import utc from "dayjs/plugin/utc";
-import timezone from "dayjs/plugin/timezone";
-dayjs.extend(utc);
-dayjs.extend(timezone);
 
 export default function home({ latestWorks }) {
   return (
@@ -42,44 +37,10 @@ export default function home({ latestWorks }) {
           {/* 最新3件を表示 */}
           <ul className={worksList.worksList}>
             {latestWorks.map((work) => (
-              <li className={worksList.worksItem} key={work.id}>
-                <Link href={`/works/detail/${work.id}`} passHref legacyBehavior>
-                  <a>
-                    <div className={worksList.worksImg}>
-                      <Image
-                        src={work.thumbnail.url}
-                        alt={work.title}
-                        width={400}
-                        height={300}
-                      />
-                      {work.category && (
-                        <span className={worksList.worksCategory}>
-                          {work.category.name}
-                        </span>
-                      )}
-                    </div>
-                    <div className={worksList.worksInner}>
-                      <h3 className={worksList.worksName}>{work.title}</h3>
-                      <p className={worksList.publishedAt}>
-                        {dayjs
-                          .utc(work.publishedAt)
-                          .tz("Asia/Tokyo")
-                          .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
-                      </p>
-                      <p className={worksList.worksTag}>
-                        {work.tag.map((tag) => (
-                          <span key={tag.id}>{tag.tag || ""}</span>
-                        ))}
-                      </p>
-                    </div>
-                  </a>
-                </Link>
-              </li>
+              <WorkItem key={work.id} work={work} />
             ))}
           </ul>
-          <div className="btn-more">
-            <Link href="/works/">WORKS一覧へ</Link>
-          </div>
+          <LinkButton href="/works/" text="WORKS一覧へ" />
         </div>
       </section>
       {/* /works */}
@@ -103,9 +64,7 @@ export default function home({ latestWorks }) {
               </p>
             </div>
           </div>
-          <div className="btn-more">
-            <Link href="/profile/">PROFILE詳細へ</Link>
-          </div>
+          <LinkButton href="/profile/" text="PROFILE詳細へ" />
         </div>
       </section>
       {/* /profile */}
@@ -119,9 +78,7 @@ export default function home({ latestWorks }) {
             <br className="util-sp-indention" />
             下記フォームからお願いいたします。
           </p>
-          <div className="btn-more">
-            <Link href="/contact/">お問い合わせはこちら</Link>
-          </div>
+          <LinkButton href="/contact/" text="お問い合わせはこちら" />
         </div>
       </section>
       {/* /contact */}
