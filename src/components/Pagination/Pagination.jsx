@@ -10,7 +10,7 @@ export const Pagination = ({ currentPage, totalPages }) => {
         {currentPage !== 1 && (
           <li key={`pre-${currentPage}`}>
             <Link href={`/works/${currentPage - 1}`} passHref legacyBehavior>
-              <a className={styles.pageLink}>Prev</a>
+              <a className={styles.pageLink}>&#8810; Prev</a>
             </Link>
           </li>
         )}
@@ -41,7 +41,7 @@ export const Pagination = ({ currentPage, totalPages }) => {
         {currentPage !== totalPages && (
           <li key={`next-${currentPage}`}>
             <Link href={`/works/${currentPage + 1}`} passHref legacyBehavior>
-              <a className={styles.pageLink}>Next</a>
+              <a className={styles.pageLink}>Next &#8811;</a>
             </Link>
           </li>
         )}

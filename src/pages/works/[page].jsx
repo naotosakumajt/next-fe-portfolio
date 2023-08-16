@@ -78,19 +78,20 @@ export default function WorksPage({
                         </span>
                       )}
                     </div>
-
-                    <h3 className={styles.worksName}>{work.title}</h3>
-                    <p className={styles.publishedAt}>
-                      {dayjs
-                        .utc(work.publishedAt)
-                        .tz("Asia/Tokyo")
-                        .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
-                    </p>
-                    <p className={styles.worksTag}>
-                      {work.tag.map((tag) => (
-                        <span key={tag.id}>{tag.tag || ""}</span>
-                      ))}
-                    </p>
+                    <div className={styles.worksInner}>
+                      <h3 className={styles.worksName}>{work.title}</h3>
+                      <p className={styles.publishedAt}>
+                        {dayjs
+                          .utc(work.publishedAt)
+                          .tz("Asia/Tokyo")
+                          .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
+                      </p>
+                      <p className={styles.worksTag}>
+                        {work.tag.map((tag) => (
+                          <span key={tag.id}>{tag.tag || ""}</span>
+                        ))}
+                      </p>
+                    </div>
                   </a>
                 </Link>
               </li>

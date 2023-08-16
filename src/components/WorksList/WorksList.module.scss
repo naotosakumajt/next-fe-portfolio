@@ -10,30 +10,35 @@
 }
 
 .worksList {
-  display: flex;
-  flex-wrap: wrap;
   margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 5px;
 }
 
 .worksItem {
-  padding: 20px;
+  padding: 15px;
+  margin-bottom: 20px;
   box-sizing: border-box;
   transition: all 0.3s;
   & > a {
     display: block;
     color: #333;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 30px rgba(0, 0, 0, 0.15);
   }
-}
-
-.worksItem {
-  width: 33.33%;
 }
 
 /* SP表示 */
 @media screen and (max-width: 767px) {
+  .worksList {
+    grid-template-columns: 1fr;
+  }
   .worksItem {
     width: 100%;
-    padding: 10px 10px 20px;
+    padding: 10px 10px 0px;
   }
 }
 
@@ -49,7 +54,8 @@
   position: relative;
   text-align: center;
   & > img {
-    border: 1px solid #e6e6e6;
+    width: 100%;
+    border-bottom: 1px solid #e6e6e6;
   }
 }
 
@@ -68,10 +74,15 @@
   border: 1px solid #fff;
 }
 
+.worksInner {
+  padding: 15px;
+}
+
 .worksName {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: bold;
-  margin: 12px 0;
+  margin: 0 0 12px 0;
+  line-height: 1.2;
 }
 
 .worksTag {
@@ -119,7 +130,7 @@
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
-  background-color: #f7f7f7;
+  background-color: #fff;
   appearance: none;
   cursor: pointer;
   transition: border-color 0.3s ease-in-out, background-color 0.3s ease-in-out;
@@ -128,7 +139,7 @@
 .selectWrapper select:hover,
 .selectWrapper select:focus {
   border-color: #aaa;
-  background-color: #fff;
+
   outline: none;
 }
 
@@ -153,7 +164,7 @@
     margin: 0 60px;
   }
   .worksImg {
-    max-width: 600px;
+    max-width: 800px;
     margin: 0 auto 20px auto;
   }
   img {

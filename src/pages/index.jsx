@@ -58,19 +58,20 @@ export default function home({ latestWorks }) {
                         </span>
                       )}
                     </div>
-
-                    <h3 className={worksList.worksName}>{work.title}</h3>
-                    <p className={worksList.publishedAt}>
-                      {dayjs
-                        .utc(work.publishedAt)
-                        .tz("Asia/Tokyo")
-                        .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
-                    </p>
-                    <p className={worksList.worksTag}>
-                      {work.tag.map((tag) => (
-                        <span key={tag.id}>{tag.tag || ""}</span>
-                      ))}
-                    </p>
+                    <div className={worksList.worksInner}>
+                      <h3 className={worksList.worksName}>{work.title}</h3>
+                      <p className={worksList.publishedAt}>
+                        {dayjs
+                          .utc(work.publishedAt)
+                          .tz("Asia/Tokyo")
+                          .format("YYYY" + "年" + "MM" + "月" + "DD" + "日")}
+                      </p>
+                      <p className={worksList.worksTag}>
+                        {work.tag.map((tag) => (
+                          <span key={tag.id}>{tag.tag || ""}</span>
+                        ))}
+                      </p>
+                    </div>
                   </a>
                 </Link>
               </li>
