@@ -126,7 +126,7 @@
 
 .selectWrapper select {
   width: 100%;
-  padding: 8px;
+  padding: 10px;
   font-size: 1rem;
   border: 1px solid #ccc;
   border-radius: 5px;
@@ -162,6 +162,9 @@
 .article {
   .inner {
     margin: 0 60px;
+  }
+  .worksInner {
+    padding: 5px;
   }
   .worksImg {
     max-width: 800px;

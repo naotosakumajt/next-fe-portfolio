@@ -6,6 +6,9 @@ aside
 }
 .sideBox {
   margin-bottom: 40px;
+  &:last-child {
+    margin-bottom: 0;
+  }
   a {
     color: #2b2c30;
     text-decoration: none;
@@ -17,7 +20,6 @@ aside
   font-weight: bold;
   background-color: #eee;
   padding: 6px 10px;
-  margin-bottom: 10px;
   border-top: 1px solid #dddbdb;
 }
 
@@ -33,7 +35,7 @@ aside
 }
 
 .listTag {
-  padding: 0 10px;
+  padding: 10px 10px 0;
   li {
     margin-right: 16px;
     padding: 4px 0;

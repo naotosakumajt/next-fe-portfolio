@@ -77,9 +77,9 @@ li {
  見出し
 ---------------------------------*/
 .title {
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: normal;
-  line-height: 1;
+  line-height: 1.2;
   margin-bottom: 40px;
   text-align: center;
   letter-spacing: 0.05em;
@@ -132,7 +132,7 @@ h5 {
     border: none;
     line-height: 1;
     border-radius: 5px;
-    padding: 20px 40px;
+    padding: 17px 40px;
     cursor: pointer;
     transition: background-color 0.2s;
     position: relative;
@@ -170,7 +170,7 @@ h5 {
     display: block;
   }
   .btn-more {
-    width: 95%;
+    width: 90%;
     margin: 40px auto 0;
   }
 }
