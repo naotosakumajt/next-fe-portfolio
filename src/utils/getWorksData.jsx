@@ -9,50 +9,56 @@ export async function getWorksData(
   page = 1,
   categorySlug = "",
   tagSlug = "",
+  dateFilter = "",
   limit = 5
 ) {
   const offset = (page - 1) * limit;
 
-  let queries = { offset, limit };
+  let queries = { skip: offset, limit };
   if (categorySlug) {
-    queries.filters = `category[equals]${categorySlug}`;
+    queries["fields.category.sys.id"] = categorySlug;
   }
 
   if (tagSlug) {
-    queries.filters = `tag[contains]${tagSlug}`;
+    queries["fields.tag.sys.id"] = tagSlug;
   }
 
-  const worksData = await client.get({
-    endpoint: "works",
-    queries,
+  const worksData = await client.getEntries({
+    content_type: "works",
+    ...queries,
   });
 
-  const categoriesData = await client.get({ endpoint: "categories" });
-  const tagsData = await client.get({ endpoint: "tags" });
+  const categoriesData = await client.getEntries({
+    content_type: "categories",
+  });
+  const tagsData = await client.getEntries({
+    content_type: "tags",
+  });
 
   const categories = {};
-  categoriesData.contents.forEach((category) => {
-    categories[category.id] = category;
+  categoriesData.items.forEach((category) => {
+    categories[category.sys.id] = category.fields;
   });
 
   const tags = {};
-  tagsData.contents.forEach((tag) => {
-    tags[tag.id] = tag;
+  tagsData.items.forEach((tag) => {
+    tags[tag.sys.id] = tag.fields;
   });
 
-  const works = worksData.contents.map((work) => {
-    const category = work.category && categories[work.category[0]?.id];
-    const workTags = Array.isArray(work.tag)
-      ? work.tag.map((tagId) => tags[tagId]?.tag || null)
+  const works = worksData.items.map((work) => {
+    const category =
+      work.fields.category && categories[work.fields.category.sys.id];
+    const workTags = Array.isArray(work.fields.tag)
+      ? work.fields.tag.map((tag) => tags[tag.sys.id]?.tag || null)
       : [];
-    return { ...work, categories: category || null, tags: workTags };
+    return { ...work.fields, category: category || null, tags: workTags };
   });
 
   return {
     works,
-    category: categoriesData.contents,
-    tag: tagsData.contents,
-    totalCount: worksData.totalCount,
+    category: categoriesData.items,
+    tag: tagsData.items,
+    totalCount: worksData.total,
   };
 }
 

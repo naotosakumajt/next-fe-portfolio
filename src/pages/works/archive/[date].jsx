@@ -50,7 +50,7 @@ export async function getStaticProps({ params }) {
   const { date } = params;
   const formattedDate = date.replace("_", "-");
   const parsedDate = dayjs(`${formattedDate}-01`, "YYYY-MM").tz("Asia/Tokyo");
-  const formattedYearMonth = parsedDate.format("YYYY年M月");
+  const formattedYearMonth = parsedDate.format();
 
   const { works, category, tag } = await getWorksData(
     1,

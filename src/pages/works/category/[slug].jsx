@@ -18,8 +18,8 @@ export default function CategoryWorksPage({
 
   // カテゴリー名を取得する関数
   const getCategoryName = (categoryId) => {
-    const targetCategory = category.find((cat) => cat.id === categoryId);
-    return targetCategory ? targetCategory.name : "";
+    const targetCategory = category.find((cat) => cat.sys.id === categoryId);
+    return targetCategory ? targetCategory.fields.categories : "";
   };
 
   const postsPerPage = 5;
@@ -67,7 +67,7 @@ export async function getStaticPaths() {
   const { category } = await getWorksData();
   const paths = category.map((cat) => ({
     params: {
-      slug: cat.id,
+      slug: cat.sys.id,
     },
   }));
 

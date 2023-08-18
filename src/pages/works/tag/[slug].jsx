@@ -17,8 +17,8 @@ export default function TagWorksPage({ works, category, tag, totalCount }) {
 
   // タグ名を取得する関数
   const getTagName = (tagId) => {
-    const targetTag = tag.find((t) => t.id === tagId);
-    return targetTag ? targetTag.tag : "";
+    const targetTag = tag.find((t) => t.sys.id === tagId);
+    return targetTag ? targetTag.fields.tags : "";
   };
 
   return (
@@ -63,7 +63,7 @@ export async function getStaticPaths() {
   const { tag } = await getWorksData();
   const paths = tag.map((t) => ({
     params: {
-      slug: t.id,
+      slug: t.sys.id,
     },
   }));
 

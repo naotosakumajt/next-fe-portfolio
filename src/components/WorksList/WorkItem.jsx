@@ -9,19 +9,23 @@ dayjs.extend(timezone);
 import styles from "@/components/WorksList/WorksList.module.scss";
 
 export const WorkItem = ({ work }) => {
+  console.log("WorkItem - work:", work);
+  console.log("WorkItem - work.tag:", work.tag);
   return (
     <li className={styles.worksItem} key={work.id}>
       <Link href={`/works/detail/${work.id}`} passHref legacyBehavior>
         <a>
           <div className={styles.worksImg}>
             <Image
-              src={work.thumbnail.url}
+              src={`http:${work.thumbnail.fields.file.url}`}
               alt={work.title}
               width={400}
               height={300}
             />
             {work.category && (
-              <span className={styles.worksCategory}>{work.category.name}</span>
+              <span className={styles.worksCategory}>
+                {work.category.categories}
+              </span>
             )}
           </div>
           <div className={styles.worksInner}>
@@ -34,7 +38,7 @@ export const WorkItem = ({ work }) => {
             </p>
             <p className={styles.worksTag}>
               {work.tag.map((tag) => (
-                <span key={tag.id}>{tag.tag || ""}</span>
+                <span key={tag.id}>{tag.fields.tags}</span>
               ))}
             </p>
           </div>

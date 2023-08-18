@@ -1,5 +1,6 @@
-import { createClient } from "microcms-js-sdk";
+import { createClient } from "contentful";
+
 export const client = createClient({
-  serviceDomain: "my-blog-next39",
-  apiKey: process.env.API_KEY,
+  space: process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID,
+  accessToken: process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN,
 });

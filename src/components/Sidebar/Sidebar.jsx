@@ -9,9 +9,9 @@ export const Sidenavi = ({ category, tag }) => {
         <h2 className={styles.pageTitle}>カテゴリー</h2>
         <ul className={styles.listCate}>
           {category.map((category) => (
-            <li key={category.id}>
-              <Link href={`/works/category/${category.id}`} legacyBehavior>
-                <a>{category.name}</a>
+            <li key={category.sys.id}>
+              <Link href={`/works/category/${category.sys.id}`} legacyBehavior>
+                <a>{category.fields.categories}</a>
               </Link>
             </li>
           ))}
@@ -23,9 +23,9 @@ export const Sidenavi = ({ category, tag }) => {
         <h2 className={styles.pageTitle}>タグ</h2>
         <ul className={styles.listTag}>
           {tag.map((tag) => (
-            <li key={tag.id}>
-              <Link href={`/works/tag/${tag.id}`} legacyBehavior>
-                <a>{tag.tag}</a>
+            <li key={tag.sys.id}>
+              <Link href={`/works/tag/${tag.sys.id}`} legacyBehavior>
+                <a>{tag.fields.tags}</a>
               </Link>
             </li>
           ))}
