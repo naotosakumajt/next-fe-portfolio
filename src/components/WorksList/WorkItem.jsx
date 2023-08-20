@@ -9,8 +9,6 @@ dayjs.extend(timezone);
 import styles from "@/components/WorksList/WorksList.module.scss";
 
 export const WorkItem = ({ work }) => {
-  console.log("WorkItem - work:", work);
-  console.log("WorkItem - work.tag:", work.tag);
   return (
     <li className={styles.worksItem} key={work.id}>
       <Link href={`/works/detail/${work.id}`} passHref legacyBehavior>
@@ -37,8 +35,8 @@ export const WorkItem = ({ work }) => {
                 .format("YYYY年MM月DD日")}
             </p>
             <p className={styles.worksTag}>
-              {work.tag.map((tag) => (
-                <span key={tag.id}>{tag.fields.tags}</span>
+              {work.tag.map((tag, index) => (
+                <span key={index}>{tag.fields.tags}</span>
               ))}
             </p>
           </div>

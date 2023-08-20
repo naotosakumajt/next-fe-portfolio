@@ -9,11 +9,12 @@ import styles from "@/components/WorksList/WorksList.module.scss";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
 export default function worksId({ works, category, tag, specificWork }) {
-  const work = specificWork;
+  const work = specificWork.fields;
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
       <CustomHead title="WORKS DETAIL" />
@@ -22,14 +23,14 @@ export default function worksId({ works, category, tag, specificWork }) {
           <div className={styles.inner}>
             <div className={styles.worksImg}>
               <Image
-                src={work.thumbnail.url}
+                src={`http:${work.thumbnail.fields.file.url}`}
                 alt={work.title}
                 width={400}
                 height={300}
               />
               {work.category && (
                 <span className={styles.worksCategory}>
-                  {work.category.name}
+                  {work.category.fields.categories}
                 </span>
               )}
             </div>
@@ -43,15 +44,12 @@ export default function worksId({ works, category, tag, specificWork }) {
               </p>
               <p className={styles.worksTag}>
                 {work.tag.map((tag) => (
-                  <span key={tag.id}>{tag.tag || ""}</span>
+                  <span key={tag.id}>{tag.fields.tags}</span>
                 ))}
               </p>
-              <div
-                className={styles.articleText}
-                dangerouslySetInnerHTML={{
-                  __html: `${work.body}`,
-                }}
-              />
+              <div className={styles.articleText}>
+                {documentToReactComponents(work.body)}
+              </div>
             </div>
           </div>
         </article>
@@ -65,9 +63,9 @@ export async function getStaticProps({ params }) {
   const { works, category, tag } = await getWorksData(1, "", "");
   const uniqueDates = await getUniqueDates();
 
-  const specificWork = await client.get({
-    endpoint: "works",
-    contentId: params.id,
+  const specificWork = await client.getEntries({
+    content_type: "works",
+    "sys.id": params.id,
   });
 
   return {
@@ -76,16 +74,16 @@ export async function getStaticProps({ params }) {
       category,
       tag,
       uniqueDates,
-      specificWork,
+      specificWork: specificWork.items[0],
     },
   };
 }
 
 export const getStaticPaths = async () => {
-  const data = await client.get({ endpoint: "works" });
+  const data = await client.getEntries({ content_type: "works" });
 
-  const paths = data.contents.map((content) => ({
-    params: { id: content.id.toString() },
+  const paths = data.items.map((item) => ({
+    params: { id: item.sys.id },
   }));
 
   return { paths, fallback: false };

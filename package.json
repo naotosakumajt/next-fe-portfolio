@@ -9,14 +9,15 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.17.1",
     "axios": "^1.4.0",
     "classnames": "^2.3.2",
     "contentful": "^10.4.2",
     "dayjs": "^1.11.9",
     "eslint": "8.43.0",
     "eslint-config-next": "13.4.7",
-    "microcms-js-sdk": "^2.5.0",
     "next": "13.4.7",
+    "node-fetch": "^3.3.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.2",
