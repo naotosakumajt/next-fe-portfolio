@@ -51,7 +51,12 @@ export async function getWorksData(
     const workTags = Array.isArray(work.fields.tag)
       ? work.fields.tag.map((tag) => tags[tag.sys.id]?.tag || null)
       : [];
-    return { ...work.fields, category: category || null, tags: workTags };
+    return {
+      id: work.sys.id,
+      ...work.fields,
+      category: category || null,
+      tags: workTags,
+    };
   });
 
   return {
