@@ -11,7 +11,7 @@ import worksList from "@/components/WorksList/WorksList.module.scss";
 export default function home({ latestWorks }) {
   return (
     <Layout showSidebar={false}>
-      <CustomHead title="TOP" />
+      <CustomHead title="TOPページ" />
       {/* MV */}
       <div className={styles.mv}>
         <div className={styles.mvbox}>
@@ -29,7 +29,6 @@ export default function home({ latestWorks }) {
         </div>
       </div>
       {/* /MV */}
-
       {/* works */}
       <section className="section">
         <div className="box">
@@ -44,7 +43,6 @@ export default function home({ latestWorks }) {
         </div>
       </section>
       {/* /works */}
-
       {/* profile */}
       <section className="section">
         <div className="box">
@@ -68,7 +66,6 @@ export default function home({ latestWorks }) {
         </div>
       </section>
       {/* /profile */}
-
       {/* contact */}
       <section className={`${styles.contact} section`}>
         <div className="box">
