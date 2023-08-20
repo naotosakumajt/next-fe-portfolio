@@ -25,6 +25,7 @@ export async function getWorksData(
 
   const worksData = await client.getEntries({
     content_type: "works",
+    order: "-fields.publishedAt",
     ...queries,
   });
 

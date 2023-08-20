@@ -87,10 +87,12 @@ export default function home({ latestWorks }) {
 }
 
 export async function getStaticProps() {
-  const { works } = await getWorksData(1, "", "", 3);
+  const { works } = await getWorksData(1, "", "", "", 5);
+  const latestWorks = works.slice(0, 3);
+
   return {
     props: {
-      latestWorks: works,
+      latestWorks,
     },
   };
 }
