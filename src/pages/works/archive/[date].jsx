@@ -1,12 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { CustomHead } from "@/components/Head";
+import { ArchiveSelect } from "@/components/WorksList/ArchiveSelect";
 import { useRouter } from "next/router";
 import { WorkItem } from "@/components/WorksList/WorkItem";
 import { LinkButton } from "@/components/LinkButton";
 import styles from "@/components/WorksList/WorksList.module.scss";
 import { Layout } from "@/components/Layout/Layout";
-import { getWorksData } from "@/utils/getWorksData";
+import { getWorksData, getUniqueDates } from "@/utils/getWorksData";
 
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
@@ -14,7 +15,7 @@ import timezone from "dayjs/plugin/timezone";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 
-export default function MonthlyArchive({ works, category, tag }) {
+export default function MonthlyArchive({ works, category, tag, uniqueDates }) {
   const router = useRouter();
   const { date } = router.query;
   const formattedDate = date.replace("_", "-");
@@ -34,6 +35,7 @@ export default function MonthlyArchive({ works, category, tag }) {
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">{parsedDate.format("YYYY年M月")}</h2>
+          <ArchiveSelect uniqueDates={uniqueDates} />
           <ul className={styles.worksList}>
             {filteredWorks.map((work) => (
               <WorkItem key={work.id} work={work} />
@@ -56,14 +58,17 @@ export async function getStaticProps({ params }) {
     1,
     "",
     "",
-    formattedYearMonth
+    formattedYearMonth,
+    null
   );
+  const uniqueDates = await getUniqueDates();
 
   return {
     props: {
       works,
       category,
       tag,
+      uniqueDates,
     },
   };
 }

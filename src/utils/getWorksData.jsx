@@ -10,11 +10,14 @@ export async function getWorksData(
   categorySlug = "",
   tagSlug = "",
   dateFilter = "",
-  limit = 5
+  limit = null
 ) {
-  const offset = (page - 1) * limit;
+  const offset = (page - 1) * (limit !== null ? limit : 5);
+  let queries = { skip: offset };
+  if (limit !== null) {
+    queries["limit"] = limit;
+  }
 
-  let queries = { skip: offset, limit };
   if (categorySlug) {
     queries["fields.category.sys.id"] = categorySlug;
   }

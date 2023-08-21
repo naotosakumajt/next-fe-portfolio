@@ -40,7 +40,14 @@ export default function WorksPage({
 
 export async function getStaticProps({ params }) {
   const page = parseInt(params.page || 1, 10);
-  const { works, category, tag, totalCount } = await getWorksData(page);
+  const postsPerPage = 5;
+  const { works, category, tag, totalCount } = await getWorksData(
+    page,
+    "",
+    "",
+    null,
+    postsPerPage
+  );
   const uniqueDates = await getUniqueDates();
 
   return {

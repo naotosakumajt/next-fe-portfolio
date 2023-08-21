@@ -37,7 +37,13 @@ export default function Works({
 }
 
 export async function getStaticProps() {
-  const { works, category, tag, totalCount } = await getWorksData(1, "", "", 5);
+  const { works, category, tag, totalCount } = await getWorksData(
+    1,
+    "",
+    "",
+    null,
+    5
+  );
   const uniqueDates = await getUniqueDates();
 
   return {
