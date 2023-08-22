@@ -3,7 +3,7 @@
 Next.jsとContentfulを使って、ポートフォリオサイト作成。
 
 ## 開発環境
-- Next.js
+- Next.js 13.4.7
 - Contentful（CMS）
 - GitHub
 
