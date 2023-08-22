@@ -1,5 +1,5 @@
 ## ポートフォリオ概要
-- FY23下期課題 for MKT/UXD FE
+- FY23下期課題 for MKT/UXD FE 
   Next.jsとContentfulを使って、ポートフォリオサイト作成。
 
 ## 開発環境
