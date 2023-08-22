@@ -14,7 +14,7 @@ export default function WorksPage({
   currentPage,
   uniqueDates,
 }) {
-  const postsPerPage = 5;
+  const postsPerPage = 20;
   const totalPages = Math.ceil(totalCount / postsPerPage);
 
   return (
@@ -40,7 +40,7 @@ export default function WorksPage({
 
 export async function getStaticProps({ params }) {
   const page = parseInt(params.page || 1, 10);
-  const postsPerPage = 5;
+  const postsPerPage = 20;
   const { works, category, tag, totalCount } = await getWorksData(
     page,
     "",

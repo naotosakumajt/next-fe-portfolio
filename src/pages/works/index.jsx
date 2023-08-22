@@ -42,7 +42,7 @@ export async function getStaticProps() {
     "",
     "",
     null,
-    5
+    20
   );
   const uniqueDates = await getUniqueDates();
 
