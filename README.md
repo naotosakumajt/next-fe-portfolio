@@ -36,6 +36,3 @@ Contentfulのデータの取得のところで、絞り込みで結構時間を�
 ## 今後実装したい機能など
 - TypeScriptを使った実装
 - microCMSなど使ったJamstack
-
-## 著者
-[naotosakumajt](https://github.com/naotosakumajt/)
