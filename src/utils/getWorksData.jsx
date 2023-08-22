@@ -12,7 +12,7 @@ export async function getWorksData(
   dateFilter = "",
   limit = null
 ) {
-  const offset = (page - 1) * (limit !== null ? limit : 5);
+  const offset = (page - 1) * (limit !== null ? limit : 20);
   let queries = { skip: offset };
   if (limit !== null) {
     queries["limit"] = limit;

@@ -37,9 +37,6 @@ export default function CategoryWorksPage({
             ))}
           </ul>
         </div>
-        {totalPages > 1 && (
-          <Pagination currentPage={1} totalPages={totalPages} />
-        )}
         <LinkButton href="/works/" text="WORKS一覧へ" />
       </section>
     </Layout>
