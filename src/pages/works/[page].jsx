@@ -1,4 +1,3 @@
-import { CustomHead } from "@/components/Head";
 import { ArchiveSelect } from "@/components/WorksList/ArchiveSelect";
 import { WorkItem } from "@/components/WorksList/WorkItem";
 import { Layout } from "@/components/Layout/Layout";
@@ -19,7 +18,6 @@ export default function WorksPage({
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
-      <CustomHead title="WORKS TOP" />
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">WORKS</h2>

@@ -1,13 +1,10 @@
-import { CustomHead } from "@/components/Head";
 import Image from "next/image";
-import Link from "next/link";
 import { Layout } from "@/components/Layout/Layout";
 import styles from "@/styles/Profile.module.scss";
 
 const profile = () => {
   return (
     <Layout>
-      <CustomHead title="PROFILE" />
       <section className="section">
         <div className="box">
           <h2 className="title">PROFILE</h2>

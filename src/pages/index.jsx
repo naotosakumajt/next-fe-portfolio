@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { CustomHead } from "@/components/Head";
 import { WorkItem } from "@/components/WorksList/WorkItem";
 import { LinkButton } from "@/components/LinkButton";
 import { getWorksData } from "@/utils/getWorksData";
@@ -11,7 +10,6 @@ import worksList from "@/components/WorksList/WorksList.module.scss";
 export default function home({ latestWorks }) {
   return (
     <Layout showSidebar={false}>
-      <CustomHead title="TOPページ" />
       {/* MV */}
       <div className={styles.mv}>
         <div className={styles.mvbox}>

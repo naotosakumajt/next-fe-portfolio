@@ -1,4 +1,3 @@
-import { CustomHead } from "@/components/Head";
 import { WorkItem } from "@/components/WorksList/WorkItem";
 import { LinkButton } from "@/components/LinkButton";
 import { useRouter } from "next/router";
@@ -27,7 +26,6 @@ export default function CategoryWorksPage({
 
   return (
     <Layout showSidebar={true} category={category} tag={tag} works={works}>
-      <CustomHead title="WORKS CATEGORY" />
       <section className={`${styles.works} section`}>
         <div className="box">
           <h2 className="title">{getCategoryName(slug)}</h2>
